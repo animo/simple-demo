@@ -1,10 +1,10 @@
 import axios, { AxiosResponse } from "axios";
 
-const baseUrl = process.env.REACT_APP_HOST_BACKEND ?? "http://localhost:49160";
+const baseUrl = process.env.REACT_APP_HOST_BACKEND ?? "http://localhost:49161";
 
 const api = axios.create({ baseURL: baseUrl });
 
-export const createConnection = (): Promise<AxiosResponse> => {
+export const createInvitation = (): Promise<AxiosResponse> => {
   return api.post("/connections/create-invitation", {
     autoAcceptConnection: true,
   });
