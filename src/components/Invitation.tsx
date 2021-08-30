@@ -34,6 +34,7 @@ export const Invitation: React.FC<Props> = () => {
     const fetchConnection = async () => {
       if (connectionId) {
         const con = await getConnectionById(connectionId);
+        if (con.data.state === "complete") clearInterval(timer);
         setState(con.data.state);
       }
     };
@@ -62,13 +63,15 @@ export const Invitation: React.FC<Props> = () => {
           )}
         </form>
       </div>
-      {state === "responded" && <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />}
+      {state === "complete" || state === "responded" ? (
+        <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />
+      ) : null}
       <Link to="/credential">
         <button
           className={`bg-blue-500 text-white font-bold py-2 px-4 rounded ${
-            state !== "responded" ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
+            state !== "complete" && state !== "responded" ? "opacity-50 cursor-not-allowed" : "hover:bg-blue-700"
           }`}
-          disabled={state !== "responded"}
+          disabled={state !== "complete" && state !== "responded"}
         >
           Next
         </button>

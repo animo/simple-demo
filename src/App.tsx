@@ -1,7 +1,7 @@
 import { Invitation } from "./components/Invitation";
 import { Credential } from "./components/Credential";
 import { Home } from "./components/Home";
-
+import { Proof } from "./components/Proof";
 // Router
 import { Switch, Route, useLocation } from "react-router-dom";
 
@@ -19,6 +19,9 @@ function App() {
         </Route>
         <Route path="/credential" exact>
           <Credential />
+        </Route>
+        <Route path="/proof" exact>
+          <Proof />
         </Route>
       </Switch>
     </div>
