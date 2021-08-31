@@ -1,21 +1,11 @@
 import axios, { AxiosResponse } from "axios";
 
 const baseUrl = process.env.REACT_APP_HOST_BACKEND ?? "http://localhost:49160";
+const credDefId = process.env.REACT_APP_CREDENTIAL_DEFINITION_ID ?? "";
 
 const api = axios.create({ baseURL: baseUrl });
 
-export const bootstrap = () => {
-  // Setup Schema
-  // "id": "WghBqNdoFjaYh6F5N9eBF:2:Animo Card:2.0", -- NAME & TITLE
-  // Setup cred-def-id
-};
-
-export const issueCredential = (
-  connectionId: string,
-  credDefId: string,
-  name: string,
-  title: string
-): Promise<AxiosResponse> => {
+export const issueCredential = (connectionId: string, name: string, title: string): Promise<AxiosResponse> => {
   return api.post("/issue-credentials/send-offer", {
     comment: "string",
     connection_id: connectionId,

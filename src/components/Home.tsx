@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export interface Props {}
 
 export const Home: React.FC<Props> = () => {
+  window.localStorage.removeItem("connectionId");
   return (
     <div className="flex items-center justify-center h-screen">
       <Link to={`/invitation`}>

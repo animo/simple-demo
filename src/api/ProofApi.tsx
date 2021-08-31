@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 
 const baseUrl = process.env.REACT_APP_HOST_BACKEND ?? "http://localhost:49160";
+const credDefId = process.env.REACT_APP_CREDENTIAL_DEFINITION_ID ?? "";
 
 const api = axios.create({ baseURL: baseUrl });
 
@@ -12,16 +13,16 @@ export const createProofRequest = (connectionId: string): Promise<AxiosResponse>
         additionalProp1: {
           restrictions: [
             {
-              cred_def_id: "WghBqNdoFjaYh6F5N9eBF:3:CL:3263:latest",
+              cred_def_id: credDefId,
             },
           ],
           name: "title",
         },
       },
       version: "1.0",
-      name: "Hoi Timo",
+      name: "Animo Title Request",
     },
-    comment: "lol",
+    comment: "Agent Jan want's to know your Animo Title",
   });
 };
 

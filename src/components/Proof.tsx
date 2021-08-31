@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-
-import { createProofRequest, getProofByThreadId } from "../api/ProofApi";
 import Confetti from "react-confetti";
+import { getProofFromBase64 } from "../utils/ProofUtils";
+
+// api
+import { createProofRequest, getProofByThreadId } from "../api/ProofApi";
+
+// components
+import { CompletedModal } from "./CompletedModal";
 
 export interface Props {}
 
 export const Proof: React.FC<Props> = () => {
+  const [open, setOpen] = useState(true);
+  const [proof, setProof] = useState();
   const [state, setState] = useState();
   const [threadId, setThreadId] = useState();
   const con = localStorage.getItem("connectionId") ?? "";
@@ -23,7 +30,12 @@ export const Proof: React.FC<Props> = () => {
     const fetchProof = async () => {
       if (threadId) {
         const con = await getProofByThreadId(threadId);
-        if (con.data.state === "done") clearInterval(timer);
+        if (con.data.state === "presentation-received") {
+          clearInterval(timer);
+          var proof = getProofFromBase64(con.data.presentationMessage.presentationAttachments[0].data.base64);
+          setProof(proof);
+          setOpen(true);
+        }
         setState(con.data.state);
       }
     };
@@ -52,9 +64,10 @@ export const Proof: React.FC<Props> = () => {
           )}
         </form>
       </div>
-      {state === "complete" || state === "responded" ? (
+      {state === "presentation-received" ? (
         <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />
       ) : null}
+      {proof && <CompletedModal open={open} setOpen={setOpen} proof={proof} />}
     </div>
   );
 };

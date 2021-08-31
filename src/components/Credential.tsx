@@ -26,7 +26,8 @@ export const Credential: React.FC<Props> = () => {
   const onButtonClick = async (e: any) => {
     e.preventDefault();
     if (credentialId === "") {
-      const cred = await issueCredential(con, "WghBqNdoFjaYh6F5N9eBF:3:CL:3263:latest", info.name, info.title);
+      const cred = await issueCredential(con, info.name, info.title);
+      setState(cred.data.state);
       setCredentialId(cred.data.id);
     }
   };
