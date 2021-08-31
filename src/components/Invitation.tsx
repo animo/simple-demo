@@ -24,6 +24,7 @@ export const Invitation: React.FC<Props> = () => {
         const inv = await createInvitation();
         setInvitation(inv.data.invitation_url);
         setConnectionId(inv.data.connection.connection_id);
+        setState(inv.data.connection.state);
         localStorage.setItem("connectionId", inv.data.connection.connection_id);
       };
       fetchInvitation();
@@ -40,7 +41,7 @@ export const Invitation: React.FC<Props> = () => {
     };
     const timer = setInterval(() => {
       fetchConnection();
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [connectionId]);

@@ -16,10 +16,11 @@ export const Proof: React.FC<Props> = () => {
   const [state, setState] = useState();
   const [threadId, setThreadId] = useState();
   const con = localStorage.getItem("connectionId") ?? "";
+  const credDef = window.localStorage.getItem("credentialDefinitionId") ?? "";
 
   useEffect(() => {
     const requestProof = async () => {
-      const resp = await createProofRequest(con);
+      const resp = await createProofRequest(con, credDef);
       setState(resp.data.state);
       setThreadId(resp.data.threadId);
     };

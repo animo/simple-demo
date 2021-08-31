@@ -12,8 +12,9 @@ export const Credential: React.FC<Props> = () => {
     title: "",
   });
   const [credentialId, setCredentialId] = useState("");
-  const [state, setState] = useState();
+  const [state, setState] = useState("");
   const con = localStorage.getItem("connectionId") ?? "";
+  const credDef = window.localStorage.getItem("credentialDefinitionId") ?? "";
 
   const handleChange = (e: any) => {
     const value = e.target.value;
@@ -26,7 +27,7 @@ export const Credential: React.FC<Props> = () => {
   const onButtonClick = async (e: any) => {
     e.preventDefault();
     if (credentialId === "") {
-      const cred = await issueCredential(con, info.name, info.title);
+      const cred = await issueCredential(con, credDef, info.name, info.title);
       setState(cred.data.state);
       setCredentialId(cred.data.id);
     }
@@ -104,7 +105,7 @@ export const Credential: React.FC<Props> = () => {
               </button>
             </Link>
 
-            {credentialId && (
+            {state && (
               <>
                 <p className="text-sm text-gray-500 mx-2 py-2">Check your agent and accept your Animo Card</p>
                 <p className="text-sm text-gray-500 mx-2 py-2">
