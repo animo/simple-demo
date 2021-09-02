@@ -11,7 +11,7 @@
 <p align="center">
   <img
     alt="Pipeline Status"
-    src="https://github.com/animo/animo-demo/workflows/Continuous%20Integration/badge.svg?branch=main"
+    src="https://github.com/animo/animo-demo/actions/workflows/continuous-integration.yml/badge.svg"
   />
   <a href="https://codecov.io/gh/animo/animo-demo/"
     ><img
