@@ -10,11 +10,11 @@ export const issueCredential = async (
   name: string,
   title: string
 ): Promise<AxiosResponse> => {
-  return api.post(`/issue-credentials/${connectionId}/send-offer`, {
+  return api.post(`/credentials/${connectionId}/offer-credential`, {
     comment: "Here is your Animo Employee Card",
     cred_def_id: credDefId,
     credential_preview: {
-      "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/1.0/credential-preview",
+      "@type": "https://didcomm.org/issue-credential/1.0/credential-preview",
       attributes: [
         {
           name: "name",

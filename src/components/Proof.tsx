@@ -3,7 +3,7 @@ import Confetti from "react-confetti";
 import { getProofFromBase64 } from "../utils/ProofUtils";
 
 // api
-import { createProofRequest, getProofByThreadId } from "../api/ProofApi";
+import { createProofRequest, getProofById } from "../api/ProofApi";
 
 // components
 import { CompletedModal } from "./CompletedModal";
@@ -14,7 +14,7 @@ export const Proof: React.FC<Props> = () => {
   const [open, setOpen] = useState(true);
   const [proof, setProof] = useState();
   const [state, setState] = useState();
-  const [threadId, setThreadId] = useState();
+  const [proofId, setProofId] = useState();
   const con = localStorage.getItem("connectionId") ?? "";
   const credDef = window.localStorage.getItem("credentialDefinitionId") ?? "";
 
@@ -22,18 +22,19 @@ export const Proof: React.FC<Props> = () => {
     const requestProof = async () => {
       const resp = await createProofRequest(con, credDef);
       setState(resp.data.state);
-      setThreadId(resp.data.threadId);
+      setProofId(resp.data.id);
     };
     requestProof();
   }, [con]);
 
   useEffect(() => {
     const fetchProof = async () => {
-      if (threadId) {
-        const con = await getProofByThreadId(threadId);
+      if (proofId) {
+        const con = await getProofById(proofId);
         if (con.data.state === "presentation-received") {
           clearInterval(timer);
-          var proof = getProofFromBase64(con.data.presentationMessage.presentationAttachments[0].data.base64);
+          console.log(con.data);
+          var proof = getProofFromBase64(con.data.presentationMessage["presentations~attach"][0].data.base64);
           setProof(proof);
           setOpen(true);
         }
@@ -45,7 +46,7 @@ export const Proof: React.FC<Props> = () => {
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, [threadId]);
+  }, [proofId]);
 
   return (
     <div className="flex items-center justify-center h-screen">
