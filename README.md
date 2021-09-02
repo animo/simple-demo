@@ -9,10 +9,10 @@
 
 <h1 align="center"><b>Animo Demo</b></h1>
 <p align="center">
-<!--   <img
+  <img
     alt="Pipeline Status"
-    src="https://github.com/animo/animo-demo/workflows/Continuous%20Integration/badge.svg?branch=main"
-  /> -->
+    src="https://github.com/animo/animo-demo/actions/workflows/continuous-integration.yml/badge.svg"
+  />
   <a href="https://codecov.io/gh/animo/animo-demo/"
     ><img
       alt="Codecov Coverage"
