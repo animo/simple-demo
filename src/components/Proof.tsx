@@ -25,7 +25,7 @@ export const Proof: React.FC<Props> = () => {
       setProofId(resp.data.id);
     };
     requestProof();
-  }, [con]);
+  }, [con, credDef]);
 
   useEffect(() => {
     const fetchProof = async () => {
