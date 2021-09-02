@@ -13,6 +13,10 @@
     alt="Pipeline Status"
     src="https://github.com/animo/animo-demo/actions/workflows/continuous-integration.yml/badge.svg"
   />
+  <img
+       alt="CodeQL"
+       src="https://github.com/animo/animo-demo/actions/workflows/build.yml/badge.svg"
+       />
   <a href="https://codecov.io/gh/animo/animo-demo/"
     ><img
       alt="Codecov Coverage"
