@@ -33,7 +33,6 @@ export const Proof: React.FC<Props> = () => {
         const con = await getProofById(proofId);
         if (con.data.state === "presentation-received") {
           clearInterval(timer);
-          console.log(con.data);
           var proof = getProofFromBase64(con.data.presentationMessage["presentations~attach"][0].data.base64);
           setProof(proof);
           setOpen(true);

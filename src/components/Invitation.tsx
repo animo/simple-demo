@@ -22,10 +22,10 @@ export const Invitation: React.FC<Props> = () => {
     } else {
       const fetchInvitation = async () => {
         const inv = await createInvitation();
-        setInvitation(inv.data.invitation_url);
-        setConnectionId(inv.data.connection.connection_id);
+        setInvitation(inv.data.invitationUrl);
+        setConnectionId(inv.data.connection.id);
         setState(inv.data.connection.state);
-        localStorage.setItem("connectionId", inv.data.connection.connection_id);
+        localStorage.setItem("connectionId", inv.data.connection.id);
       };
       fetchInvitation();
     }
