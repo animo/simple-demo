@@ -13,7 +13,7 @@ export const issueCredential = async (
   return api.post(`/credentials/${connectionId}/offer-credential`, {
     comment: "Here is your Animo Employee Card",
     credentialDefinitionId: credDefId,
-    credentialPreview: {
+    preview: {
       "@type": "https://didcomm.org/issue-credential/1.0/credential-preview",
       attributes: [
         {

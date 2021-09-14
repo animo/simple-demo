@@ -11,7 +11,7 @@ export const createProofRequest = (connectionId: string, credDefId: string): Pro
         additionalProp1: {
           restrictions: [
             {
-              credentialDefinitionId: credDefId,
+              cred_def_id: credDefId,
             },
           ],
           name: "title",
