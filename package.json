@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Animo Solutions - Verifiable Credential Demo",
   "dependencies": {
-    "@craco/craco": "^6.2.0",
+    "@craco/craco": "^6.3.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@types/react": "^17.0.21",
