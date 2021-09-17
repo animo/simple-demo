@@ -6,7 +6,7 @@
     "@craco/craco": "^6.2.0",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
-    "@types/react": "^17.0.20",
+    "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.9",
     "axios": "^0.21.4",
