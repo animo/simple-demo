@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
-    "typescript": "^4.4.2",
+    "typescript": "^4.4.3",
     "postcss": "^7.0.36",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.8"
   }
