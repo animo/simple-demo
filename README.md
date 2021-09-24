@@ -2,7 +2,7 @@
   <br />
 <img
     alt="Animo logo"
-    src="https://raw.githubusercontent.com/animo/animo-demo/main/public/logo512.png"
+    src="https://raw.githubusercontent.com/animo/animo-demo/main/client/public/logo512.png"
     height="250px"
   />
 </p>
