@@ -33,7 +33,6 @@ It's very easy. Just follow these three easy steps:
 ```sh
 cd server
 yarn dev
-cd ../
 ```
 
 2. Start the client
