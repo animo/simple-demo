@@ -22,10 +22,10 @@ export const Invitation: React.FC<Props> = () => {
     } else {
       const fetchInvitation = async () => {
         const inv = await createInvitation();
-        setInvitation(inv.data.invitation_url);
-        setConnectionId(inv.data.connection.connection_id);
+        setInvitation(inv.data.invitationUrl);
+        setConnectionId(inv.data.connection.id);
         setState(inv.data.connection.state);
-        localStorage.setItem("connectionId", inv.data.connection.connection_id);
+        localStorage.setItem("connectionId", inv.data.connection.id);
       };
       fetchInvitation();
     }
@@ -56,7 +56,7 @@ export const Invitation: React.FC<Props> = () => {
             <div className="text-4xl leading-7 font-bold text-red-600 mb-2">Connect with us</div>
           </div>
 
-          <p className="text-sm text-gray-500">You can use any wallet you want</p>
+          <p className="text-sm text-gray-500">You can use any wallet you want.</p>
           {state && (
             <p className="text-sm text-gray-500">
               <strong>State:</strong> {state}

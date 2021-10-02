@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node src/index.ts",
+    "dev": "tsnd --respawn src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aries-framework/core": "^0.1.0-alpha.276",
+    "@aries-framework/node": "^0.1.0-alpha.276",
+    "@aries-framework/rest": "^0.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "ngrok": "^4.2.2",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
+  }
+}

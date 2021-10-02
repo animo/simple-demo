@@ -54,7 +54,7 @@ export const Credential: React.FC<Props> = () => {
         <form className="flex-auto pl-6">
           <div className="flex flex-wrap items-baseline mb-4">
             <h1 className="w-full flex-none font-semibold mb-2.5">Animo Solutions</h1>
-            <div className="text-4xl leading-7 font-bold text-blue-600">Lets issue a credential</div>
+            <div className="text-4xl leading-7 font-bold text-animoblue">Let's issue a credential</div>
           </div>
           <div className="md:flex md:items-center mb-6">
             <div className="md:w-2/3">
@@ -97,17 +97,15 @@ export const Credential: React.FC<Props> = () => {
                 className={`bg-blue-500 text-white font-bold mx-2 py-2 px-4 rounded ${
                   state !== "done" && state !== "credential-issued"
                     ? "opacity-50 cursor-not-allowed"
-                    : "hover:bg-blue-700"
+                    : "hover:opacity-90"
                 }`}
                 disabled={state !== "done" && state !== "credential-issued"}
               >
                 Next
               </button>
             </Link>
-
             {state && (
               <>
-                <p className="text-sm text-gray-500 mx-2 py-2">Check your agent and accept your Animo Card</p>
                 <p className="text-sm text-gray-500 mx-2 py-2">
                   <strong>State:</strong> {state}
                 </p>
@@ -117,6 +115,9 @@ export const Credential: React.FC<Props> = () => {
               <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />
             ) : null}
           </div>
+          <p className={state ? "text-sm text-gray-500 mx-4 py-2" : "invisible"}>
+            Please accept your Animo Card in your wallet.
+          </p>
         </form>
       </div>
     </div>
