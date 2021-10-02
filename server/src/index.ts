@@ -1,9 +1,4 @@
-import {
-  Agent,
-  AutoAcceptCredential,
-  HttpOutboundTransport,
-  InitConfig,
-} from "@aries-framework/core";
+import { Agent, AutoAcceptCredential, HttpOutboundTransport, InitConfig } from "@aries-framework/core";
 import { connect } from "ngrok";
 import { BCOVRIN_TEST_GENESIS } from "./utils";
 import { agentDependencies, HttpInboundTransport } from "@aries-framework/node";
@@ -12,10 +7,10 @@ import { startServer } from "@aries-framework/rest";
 const run = async () => {
   const endpoint = await connect(3001);
   const agentConfig: InitConfig = {
-    label: "Agent Jan",
+    label: "Animo",
     walletConfig: {
-      id: "Agent Jan",
-      key: "Agent Jan",
+      id: "Animo",
+      key: "Animo",
     },
     poolName: "pool-holder",
     genesisTransactions: BCOVRIN_TEST_GENESIS,
