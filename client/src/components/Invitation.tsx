@@ -56,7 +56,7 @@ export const Invitation: React.FC<Props> = () => {
             <div className="text-4xl leading-7 font-bold text-red-600 mb-2">Connect with us</div>
           </div>
 
-          <p className="text-sm text-gray-500">You can use any wallet you want</p>
+          <p className="text-sm text-gray-500">You can use any wallet you want.</p>
           {state && (
             <p className="text-sm text-gray-500">
               <strong>State:</strong> {state}

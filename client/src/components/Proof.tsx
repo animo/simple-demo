@@ -13,7 +13,7 @@ export interface Props {}
 export const Proof: React.FC<Props> = () => {
   const [open, setOpen] = useState(true);
   const [proof, setProof] = useState();
-  const [state, setState] = useState();
+  const [state, setState] = useState("sending...");
   const [proofId, setProofId] = useState();
   const con = localStorage.getItem("connectionId") ?? "";
   const credDef = window.localStorage.getItem("credentialDefinitionId") ?? "";
@@ -58,11 +58,9 @@ export const Proof: React.FC<Props> = () => {
           <p className="text-sm text-gray-500 py-2">Check your agent and accept our proof request</p>
 
           <p className="text-sm text-gray-500"></p>
-          {state && (
-            <p className="text-sm text-gray-500">
-              <strong>State:</strong> {state}
-            </p>
-          )}
+          <p className="text-sm text-gray-500">
+            <strong>State:</strong> {state}
+          </p>
         </form>
       </div>
       {state === "presentation-received" ? (
