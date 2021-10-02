@@ -28,30 +28,23 @@
       src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg"
   /></a>
 </p>
+  <p align="center">A very simple, but awesome verifiable credential demo!</p>
 
-## Available Scripts
+## Usage
 
 In the project directory, you can run:
 
-### `yarn start`
+1. Setup the server
+```sh
+cd server
+yarn dev
+cd ../
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Start the client
+```sh
+cd client
+yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Enjoy ✨
