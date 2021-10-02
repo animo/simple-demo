@@ -17,11 +17,6 @@
        alt="CodeQL"
        src="https://github.com/animo/animo-demo/actions/workflows/build.yml/badge.svg"
        />
-  <a href="https://codecov.io/gh/animo/animo-demo/"
-    ><img
-      alt="Codecov Coverage"
-      src="https://img.shields.io/codecov/c/github/animo/animo-demo/coverage.svg?style=flat-square"
-  /></a>
   <a href="https://www.typescriptlang.org/"
     ><img
       alt="typescript"
