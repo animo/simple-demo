@@ -27,7 +27,7 @@
 
 ## Usage
 
-In the project directory, you can run:
+It's very easy. Just follow these three easy steps: 
 
 1. Setup the server
 ```sh
