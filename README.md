@@ -33,7 +33,7 @@ It's very easy. Just follow these three easy steps:
 ```sh
 cd server
 yarn
-yarn dev
+yarn dev # Make sure the server is running on http://localhost:3000/
 ```
 
 2. Start the client
