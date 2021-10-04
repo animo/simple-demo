@@ -35,7 +35,7 @@ export const getCredentialById = (credentialId: string): Promise<AxiosResponse> 
 
 export const createCredentialDefinition = async () => {
   const data = await api.post(`/credential-defintions/`, {
-    tag: "latest",
+    tag: "Animo Employee Card",
     supportRevocation: false,
     schemaId: "WghBqNdoFjaYh6F5N9eBF:2:Animo-Employee-Card:1.0",
   });
