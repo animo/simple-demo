@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "node src/index.ts",
+    "build": "tsc",
     "dev": "tsnd --respawn src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
