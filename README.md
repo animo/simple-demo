@@ -27,22 +27,10 @@
 
 ## Usage
 
-It's very easy. Just follow these three easy steps:
-
-1. Setup the server
+It's very easy.
 
 ```sh
-cd server
-yarn
-yarn dev
+docker-compose up -d
 ```
 
-2. Start the client
-
-```sh
-cd client
-yarn
-yarn start
-```
-
-3. Enjoy ✨
+That's it! The demo will be exposed on http://localhost:3000. Enjoy ✨
