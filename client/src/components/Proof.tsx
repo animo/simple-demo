@@ -53,7 +53,7 @@ export const Proof: React.FC<Props> = () => {
         <form className="flex-auto pl-6">
           <div className="flex flex-wrap items-baseline">
             <h1 className="w-full flex-none font-semibold mb-2.5">Animo Solutions</h1>
-            <div className="text-4xl leading-7 font-bold text-green-600 mb-2">Proof your identity</div>
+            <div className="text-4xl leading-7 font-bold text-green-600 mb-2">Prove your identity</div>
           </div>
           <p className="text-sm text-gray-500 py-2">Check your agent and accept our proof request</p>
 
