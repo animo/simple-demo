@@ -8,7 +8,7 @@ import { TestLogger } from "./logger";
 const run = async () => {
   const logger = new TestLogger(LogLevel.debug);
 
-  const endpoint = await connect(3001);
+  const endpoint = await connect(5001);
   const agentConfig: InitConfig = {
     label: "Animo",
     walletConfig: {
@@ -28,7 +28,7 @@ const run = async () => {
   const agent = new Agent(agentConfig, agentDependencies);
 
   const httpInbound = new HttpInboundTransport({
-    port: 3001,
+    port: 5001,
   });
 
   agent.registerInboundTransport(httpInbound);
@@ -37,7 +37,7 @@ const run = async () => {
 
   await agent.initialize();
 
-  await startServer(agent, 3000);
+  await startServer(agent, 5000);
 };
 
 run();

@@ -27,16 +27,18 @@
 
 ## Usage
 
-It's very easy. Just follow these three easy steps: 
+It's very easy. Just follow these three easy steps:
 
 1. Setup the server
+
 ```sh
 cd server
 yarn
-yarn dev # Make sure the server is running on http://localhost:3000/
+yarn dev
 ```
 
 2. Start the client
+
 ```sh
 cd client
 yarn
