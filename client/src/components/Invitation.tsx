@@ -47,19 +47,19 @@ export const Invitation: React.FC<Props> = () => {
   }, [connectionId]);
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <div className="flex p-6">
-        <div className="flex-none w-44 relative">{invitation && <QRCode value={invitation} />}</div>
+    <div className="flex flex-col md:flex-row items-center justify-center h-screen m-auto">
+      <div className="flex flex-col md:flex-row p-6">
+        <div className="flex">{invitation && <QRCode className="m-auto my-4 md:m-auto" value={invitation} />}</div>
         <form className="flex-auto pl-6">
           <div className="flex flex-wrap items-baseline">
             <h1 className="w-full flex-none font-semibold mb-2.5">Animo Solutions</h1>
             <div className="text-4xl leading-7 font-bold text-red-600 mb-2">Connect with us</div>
           </div>
 
-          <p className="text-sm text-gray-500">You can use any wallet you want.</p>
+          <p className="text-sm text-gray-500">You can use any Aries supported wallet.</p>
           {state && (
             <p className="text-sm text-gray-500">
-              <strong>State:</strong> {state}
+              <strong>Status:</strong> {state}
             </p>
           )}
         </form>
