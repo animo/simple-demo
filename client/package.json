@@ -1,6 +1,7 @@
 {
   "name": "animo-demo",
   "version": "0.1.0",
+  "license": "Apache-2.0",
   "description": "Animo Solutions - Verifiable Credential Demo",
   "dependencies": {
     "@craco/craco": "^6.3.0",
