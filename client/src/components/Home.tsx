@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
-import logo from "../assets/animo-logo.png";
+import logo from "../assets/animo-logo.jpeg";
 
 import { getAgentInfo } from "../api/AgentApi";
 import { createCredentialDefinition } from "../api/CredentialApi";
