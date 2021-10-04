@@ -7,7 +7,7 @@
   />
 </p>
 
-<h1 align="center"><b>Animo Demo</b></h1>
+<h1 align="center"><b>Simple Demo</b></h1>
 <p align="center">
   <img
     alt="Pipeline Status"
@@ -32,12 +32,14 @@ It's very easy. Just follow these three easy steps:
 1. Setup the server
 ```sh
 cd server
+yarn
 yarn dev
 ```
 
 2. Start the client
 ```sh
 cd client
+yarn
 yarn start
 ```
 
