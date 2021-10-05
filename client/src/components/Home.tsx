@@ -48,6 +48,7 @@ export const Home: React.FC<Props> = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <img className="h-48 m-4" src={logo} alt="animo-logo" />
+      <p className="text-sm text-gray-500 mx-2 py-2">This demo uses the Sovrin StagingNet ledger.</p>
       <div className="flex p-6">
         <Link to={`/invitation`}>
           <button
@@ -62,7 +63,7 @@ export const Home: React.FC<Props> = () => {
           </button>
         </Link>
       </div>
-      <p className="text-sm text-gray-500 mx-2 py-2">{description}</p>
+      <p className="text-sm  mx-2 py-2">{description}</p>
     </div>
   );
 };

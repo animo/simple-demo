@@ -1,5 +1,5 @@
 import { Agent, AutoAcceptCredential, HttpOutboundTransport, InitConfig, LogLevel } from "@aries-framework/core";
-import { BCOVRIN_TEST_GENESIS } from "./utils";
+import { SOVRIN_STAGING_NET } from "./utils";
 import { agentDependencies, HttpInboundTransport } from "@aries-framework/node";
 import { startServer } from "@aries-framework/rest";
 import { TestLogger } from "./logger";
@@ -16,7 +16,7 @@ const run = async () => {
       key: "Animo Demo Agent",
     },
     poolName: "pool-holder",
-    genesisTransactions: BCOVRIN_TEST_GENESIS,
+    genesisTransactions: SOVRIN_STAGING_NET,
     publicDidSeed: "4bd9c0200f4ba2ad8069d8dcea1c9ea9",
     logger: logger,
     endpoints: [endpoint],
