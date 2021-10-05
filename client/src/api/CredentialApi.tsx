@@ -37,7 +37,7 @@ export const createCredentialDefinition = async () => {
   const data = await api.post(`/credential-defintions/`, {
     tag: "Animo Employee Card",
     supportRevocation: false,
-    schemaId: "WghBqNdoFjaYh6F5N9eBF:2:Animo-Employee-Card:1.0",
+    schemaId: "54mekdZtq17YwSifXaJE1T:2:Animo Employee Card:1.0.0",
   });
 
   return data.data.id;
