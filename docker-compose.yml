@@ -5,12 +5,12 @@ services:
     platform: linux/amd64
     build:
       context: ./server
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile.demoserver
     ports:
       - "5000:5000"
   client:
     build:
       context: ./client
-      dockerfile: ./Dockerfile
+      dockerfile: ./Dockerfile.democlient
     ports:
       - "3000:3000"
