@@ -1,14 +1,24 @@
-import { Agent, AutoAcceptCredential, HttpOutboundTransport, InitConfig, LogLevel } from "@aries-framework/core";
+import {
+  Agent,
+  AutoAcceptCredential,
+  ConnectionEventTypes,
+  ConnectionInvitationMessage,
+  HttpOutboundTransport,
+  InitConfig,
+  LogLevel,
+} from "@aries-framework/core";
 import { BCOVRIN_TEST_GENESIS } from "./utils";
 import { agentDependencies, HttpInboundTransport } from "@aries-framework/node";
 import { startServer } from "@aries-framework/rest";
 import { TestLogger } from "./logger";
 
-const endpoint = process.env.AGENT_ENDPOINT ?? "http://localhost:5001";
-const port = process.env.AGENT_PORT ?? 5001;
+import { connect } from "ngrok";
 
 const run = async () => {
-  const logger = new TestLogger(LogLevel.debug);
+  const port = process.env.AGENT_PORT ?? 5001;
+  const endpoint = process.env.AGENT_ENDPOINT ?? (await connect(5001));
+
+  const logger = new TestLogger(LogLevel.test);
   const agentConfig: InitConfig = {
     label: "Animo Demo Agent",
     walletConfig: {
@@ -34,6 +44,24 @@ const run = async () => {
   agent.registerInboundTransport(httpInbound);
 
   agent.registerOutboundTransport(new HttpOutboundTransport());
+
+  httpInbound.app.get("/invitation", async (req: any, res: any) => {
+    if (typeof req.query.d_m === "string") {
+      const invitation = await ConnectionInvitationMessage.fromUrl(req.url.replace("d_m=", "c_i="));
+      res.send(invitation.toJSON());
+    }
+    if (typeof req.query.c_i === "string") {
+      const invitation = await ConnectionInvitationMessage.fromUrl(req.url);
+      res.send(invitation.toJSON());
+    } else {
+      const { invitation } = await agent.connections.createConnection();
+
+      res.send(invitation.toUrl({ domain: endpoint + "/invitation", useLegacyDidSovPrefix: true }));
+    }
+  });
+
+  // eslint-disable-next-line no-console
+  agent.events.on(ConnectionEventTypes.ConnectionStateChanged, (d) => console.log(d));
 
   await agent.initialize();
 
