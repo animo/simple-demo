@@ -25,8 +25,13 @@ const run = async () => {
       id: "Animo Demo Agent",
       key: "Animo Demo Agent",
     },
-    poolName: "pool-holder",
-    genesisTransactions: BCOVRIN_TEST_GENESIS,
+    indyLedgers: [
+      {
+        id: "BCOVRIN_TEST_GENESIS",
+        genesisTransactions: BCOVRIN_TEST_GENESIS,
+        isProduction: false,
+      },
+    ],
     publicDidSeed: "4bd9c0200f4ba2ad8069d8dcea1c9ea9",
     logger: logger,
     endpoints: [endpoint],
@@ -65,7 +70,7 @@ const run = async () => {
 
   await agent.initialize();
 
-  await startServer(agent, 5000);
+  await startServer(agent, { port: 5000, cors: true });
 };
 
 run();

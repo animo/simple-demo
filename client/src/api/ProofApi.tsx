@@ -5,7 +5,8 @@ const baseUrl = process.env.REACT_APP_HOST_BACKEND ?? "http://localhost:5000";
 const api = axios.create({ baseURL: baseUrl });
 
 export const createProofRequest = (connectionId: string, credDefId: string): Promise<AxiosResponse> => {
-  return api.post(`/proofs/${connectionId}/request-proof`, {
+  return api.post(`/proofs/request-proof`, {
+    connectionId: connectionId,
     proofRequest: {
       requestedAttributes: {
         additionalProp1: {

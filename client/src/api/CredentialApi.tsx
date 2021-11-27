@@ -10,7 +10,8 @@ export const issueCredential = async (
   name: string,
   title: string
 ): Promise<AxiosResponse> => {
-  return api.post(`/credentials/${connectionId}/offer-credential`, {
+  return api.post(`/credentials/offer-credential`, {
+    connectionId: connectionId,
     comment: "Here is your Animo Employee Card",
     credentialDefinitionId: credDefId,
     preview: {
@@ -34,7 +35,7 @@ export const getCredentialById = (credentialId: string): Promise<AxiosResponse> 
 };
 
 export const createCredentialDefinition = async () => {
-  const data = await api.post(`/credential-defintions/`, {
+  const data = await api.post(`/credential-definitions/`, {
     tag: "Animo Employee Card",
     supportRevocation: false,
     schemaId: "WghBqNdoFjaYh6F5N9eBF:2:Animo-Employee-Card:1.0",

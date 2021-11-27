@@ -2,11 +2,12 @@
 # yarn lockfile v1
 
 
-"@aries-framework/core@0.1.0-alpha.284", "@aries-framework/core@0.1.0-alpha.284+41d9282":
-  version "0.1.0-alpha.284"
-  resolved "https://registry.yarnpkg.com/@aries-framework/core/-/core-0.1.0-alpha.284.tgz#82d5e8545960761f7276d5ff3cb578bf94b0613e"
-  integrity sha512-1S+/f23sLfQoJRl2VDq7X0/6XEdRMxvP7qfry+FEkhH0VV3NnOs7P+2ljWiZom6tvKO6KrzSUxx2T01OCMEq/A==
+"@aries-framework/core@0.1.0-alpha.307", "@aries-framework/core@0.1.0-alpha.307+20b586d":
+  version "0.1.0-alpha.307"
+  resolved "https://registry.yarnpkg.com/@aries-framework/core/-/core-0.1.0-alpha.307.tgz#b0e7939c87e0e279fd8c8659b7143fee41096d5f"
+  integrity sha512-0rf/3QONNYRsdYITMFw9CrzyFvrSkACS1vHibGTQbjsDS88EHitTD4APlDX/HMhpUv1dECnTMznjwuN6EqWNHg==
   dependencies:
+    "@multiformats/base-x" "^4.0.1"
     "@types/indy-sdk" "^1.16.6"
     "@types/node-fetch" "^2.5.10"
     "@types/ws" "^7.4.4"
@@ -17,6 +18,7 @@
     class-transformer "^0.4.0"
     class-validator "^0.13.1"
     js-sha256 "^0.9.0"
+    lru_map "^0.4.1"
     luxon "^1.27.0"
     make-error "^1.3.6"
     multibase "^4.0.4"
@@ -28,28 +30,27 @@
     tsyringe "^4.5.0"
     uuid "^8.3.2"
 
-"@aries-framework/node@0.1.0-alpha.284":
-  version "0.1.0-alpha.284"
-  resolved "https://registry.yarnpkg.com/@aries-framework/node/-/node-0.1.0-alpha.284.tgz#498f936536ddcbf526acef03091b6856d2de9e8a"
-  integrity sha512-M7KvfJ1pOvcmDDVpZH/+4lkuxdQSnJu0AvTZqtx59DzH3Zdpv8FnoREmuZSkDJnsDJO51f6ADvtdS/2RAZIsBA==
+"@aries-framework/node@0.1.0-alpha.307":
+  version "0.1.0-alpha.307"
+  resolved "https://registry.yarnpkg.com/@aries-framework/node/-/node-0.1.0-alpha.307.tgz#9c8ae6e55fb113d0a30e0757e08988d1d9de8f45"
+  integrity sha512-+bc9KLygdac2RDhGUVT15EnBenKV9iizNLO6hIvbqqekBJk1mbZgKhlTWPgCscmAXDqRsdUGs0Pux9UexKpQIg==
   dependencies:
-    "@aries-framework/core" "0.1.0-alpha.284+41d9282"
+    "@aries-framework/core" "0.1.0-alpha.307+20b586d"
     express "^4.17.1"
-    indy-sdk "^1.16.0-dev-1634"
+    indy-sdk "^1.16.0-dev-1636"
     node-fetch "^2.6.1"
     ws "^7.5.3"
 
-"@aries-framework/rest@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@aries-framework/rest/-/rest-0.1.2.tgz#c4c180a32612230ac3c7e08b8e661d82c712d0bc"
-  integrity sha512-Hqbmoh4KPVPO1wUHCRPmdvwUk+VUOI1EMaUXxq7bHABul0SP0PZb1cJhA+eH5vsHuEg2dEL4RrGgR6zr/p0+fg==
+"@aries-framework/rest@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@aries-framework/rest/-/rest-0.5.0.tgz#a1018b01ccb9220125243449a33935c8a438b838"
+  integrity sha512-GA4E9MMQck4RvybPMQSiaCz6gLX8/h3DmQJSco44o7/xoRxVvlgKAN/xDz/WO2l2zbWE4/jZyQP8N5XjJadK4A==
   dependencies:
     class-transformer "^0.4.0"
     class-validator "^0.13.1"
     class-validator-jsonschema "^3.1.0"
     cors "^2.8.5"
     express "^4.17.1"
-    ngrok "^4.2.2"
     reflect-metadata "^0.1.13"
     routing-controllers "^0.9.0"
     routing-controllers-openapi "^3.1.0"
@@ -1110,7 +1111,7 @@ indent-string@^4.0.0:
   resolved "https://registry.yarnpkg.com/indent-string/-/indent-string-4.0.0.tgz#624f8f4497d619b2d9768531d58f4122854d7251"
   integrity sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
 
-indy-sdk@^1.16.0-dev-1634:
+indy-sdk@^1.16.0-dev-1636:
   version "1.16.0-dev-1636"
   resolved "https://registry.yarnpkg.com/indy-sdk/-/indy-sdk-1.16.0-dev-1636.tgz#e53b719a6ce536459b356dbf32b9a7cb18ca59e8"
   integrity sha512-1SYJWdf0xCr+Yd7zTLzYxS7i/j/H2dmBj9C5muPPSdh5XPkL133L0QxZ0NmVdciUY4J5TAyyCjdDgvji1ZSwAw==
@@ -1375,6 +1376,11 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+lru_map@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/lru_map/-/lru_map-0.4.1.tgz#f7b4046283c79fb7370c36f8fca6aee4324b0a98"
+  integrity sha512-I+lBvqMMFfqaV8CJCISjI3wbjmwVu/VyOoU7+qtu9d7ioW5klMgsTTiUOUp+DJvfTTzKXoPbyC6YfgkNcyPSOg==
 
 luxon@^1.27.0:
   version "1.28.0"
