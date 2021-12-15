@@ -2,7 +2,7 @@
   <br />
 <img
     alt="Animo logo"
-    src="https://raw.githubusercontent.com/animo/animo-demo/main/client/src/assets/animo-logo.jpeg"
+    src="https://github.com/animo/simple-demo/blob/main/client/public/logo512.png"
     height="250px"
   />
 </p>
@@ -11,11 +11,11 @@
 <p align="center">
   <img
     alt="Pipeline Status"
-    src="https://github.com/animo/animo-demo/actions/workflows/continuous-integration.yml/badge.svg"
+    src="https://github.com/animo/simple-demo/actions/workflows/continuous-integration.yml/badge.svg"
   />
   <img
        alt="CodeQL"
-       src="https://github.com/animo/animo-demo/actions/workflows/build.yml/badge.svg"
+       src="https://github.com/animo/simple-demo/actions/workflows/build.yml/badge.svg"
        />
   <a href="https://www.typescriptlang.org/"
     ><img
